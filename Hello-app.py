@@ -1,29 +1,34 @@
 import streamlit as st
-import math
-st.title("TTĐ: Giải phương trình bậc hai")
-with st.form(key = 'my-form'):
-    a = st.number_input('Nhập a:')
-    b = st.number_input('Nhập b:')
-    c = st.number_input('Nhập c:')
-    submit_button_giai = st.form_submit_button(label='Giải',) 
-    
 
 
-if submit_button_giai:
-    if a == 0.0:
-        if b == 0.0:
-            if c == 0.0:
-                ket_qua = 'PTB1 vô số nghiệm'
-            else:
-                ket_qua = 'PTB1 vô nghiệm'
-        else:
-            x = -c/b
-            ket_qua = 'PTB1 có nghiệm x = %.2f' % x
-    else:
-        delta = b**2 - 4*a*c
-        if delta < 0:
-            ket_qua = 'PTB2 vô nghiệm'
-        else:
-            x1 = (-b + math.sqrt(delta))/(2*a)
-            x2 = (-b - math.sqrt(delta))/(2*a)
-            ket_qua = 'PTB2 có nghiệm x1 = %.2f và x2 = %.2f' % (x1, x2)
+st.markdown("<h1><span style='color: red;'>CHÀO MỪNG THẦY ĐÃ ĐẾN VỚI PROJECT CUỐI KỲ MÔN HỌC MÁY  CỦA CHÚNG EM</span></h1>", unsafe_allow_html=True)
+
+#thiet lap thong tin tieu de 
+st.sidebar.title(" LÊ ANH DUY - 19146167  và Đặng Hữu Hiếu - 20146464")
+#thiết lập hình nền bên trái cho sidebar 
+st.sidebar.markdown(
+	f"""
+	 <style>
+	 [data-testid="stSidebar"] > div:first-child {{
+         background-image: url(https://images.unsplash.com/photo-1682547095741-b147eccfc848?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60)
+
+
+
+	 }}
+	 </style>
+	 """,
+	 unsafe_allow_html=True
+) 
+
+#thiết lập background bên phải cho web
+st.markdown(
+	f'''<style>
+	.stApp{{
+         background-image: url(https://images.unsplash.com/photo-1661956602153-23384936a1d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60)
+         
+
+
+	 }}
+	 </style>''',
+	 unsafe_allow_html=True
+)
